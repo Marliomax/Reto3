@@ -16,6 +16,9 @@ import com.usa.ciclo3.demo.repository.FarmRepository;
  * @author YO
  */
 @Service
+/**
+ * 
+ */
 public class FarmService {
     @Autowired
     private FarmRepository farmRepository;
@@ -48,11 +51,11 @@ public class FarmService {
                 if(farm.getName()!=null){
                     e.get().setName(farm.getName());
                 }
-                if(farm.getBrand()!=null){
-                    e.get().setBrand(farm.getBrand());
+                if(farm.getAddress()!=null){
+                    e.get().setAddress(farm.getAddress());
                 }
-                if(farm.getRooms() !=null){
-                    e.get().setRooms(farm.getRooms());
+                if(farm.getExtension() !=null){
+                    e.get().setExtension(farm.getExtension());
                 }
                 if(farm.getDescription()!=null){
                     e.get().setDescription(farm.getDescription());

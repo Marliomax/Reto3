@@ -4,7 +4,6 @@
  */
 package com.usa.ciclo3.demo.model;
 
-import com.usa.ciclo3.demo.model.Category;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
@@ -23,8 +22,8 @@ public class Farm implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String brand;
-    private Integer rooms;
+    private String address;
+    private Integer extension;
     private String description;
     
     @ManyToOne
@@ -37,7 +36,7 @@ public class Farm implements Serializable{
     private List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "farm")
-    @JsonIgnoreProperties({"farm", "client"})
+    @JsonIgnoreProperties({"farm", "message"})
     private List<Reservation> reservations;
 
     public Integer getId() {
@@ -56,20 +55,20 @@ public class Farm implements Serializable{
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public Integer getRooms() {
-        return rooms;
+    public Integer getExtension() {
+        return extension;
     }
 
-    public void setRooms(Integer rooms) {
-        this.rooms = rooms;
+    public void setExtension(Integer extension) {
+        this.extension = extension;
     }
 
     public String getDescription() {
@@ -105,8 +104,5 @@ public class Farm implements Serializable{
     }
 
     
-
-    
- 
-    
+   
 }
